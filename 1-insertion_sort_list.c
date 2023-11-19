@@ -12,7 +12,6 @@ void insertion_sort_list(listint_t **list)
 
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
-	
 	current = (*list)->next;
 	while (current)
 	{
@@ -21,11 +20,11 @@ void insertion_sort_list(listint_t **list)
 		prev = current->prev;
 
 		/* Compare and swap nodes if needed */
-		while (prev != NULL && temp->n <prev->n)
+		while (prev != NULL && temp->n < prev->n)
 		{
 			/*Adjust pointers to swap nodes*/
 			temp->prev = prev->prev;
-			prev->next =temp->next;
+			prev->next = temp->next;
 
 			if (temp->next != NULL)
 				temp->next->prev = prev;
